@@ -13,7 +13,7 @@ export default function Navbar(){
     const [burger,setBurger] = useState<boolean>(false);
     return(
         <>
-            <nav className="bg-white flex items-center  justify-between  py-3 rtl:space-x-reserse">
+            <nav className="bg-white flex items-center  justify-between  py-3 rtl:space-x-reserse shadow-md">
                 <Link href={URL.main} className="flex items-center space-x-3 rtl:space-x-reserse">
                     <Logo alt="logo" width={30} height={30}/>
                     <span className="self-center text-xl font-semibold">Кофеюшка</span>

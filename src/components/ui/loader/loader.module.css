@@ -1,0 +1,22 @@
+.size{
+    --size: 100%;
+    width: var(--size);
+    height: var(--size);
+}
+
+.position{
+    background: white;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 999;
+}
+
+.center{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
