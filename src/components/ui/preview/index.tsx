@@ -30,9 +30,11 @@ export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,i
                 <img src={img} alt={img} className="w-full rounded-md" style={{maxHeight:"60vh",minHeight:"40vh"}}/>
             </div>
             <div className="absolute  flex-col justify-center z-10 left-12 sm:left-16 md:left-24 lg:left-32" style={{top:"25vh"}}>
-                <h1 className={"text-2xl lg:text-6xl 2xl:text-9xl text-white"}>{label +" "}
-                    <strong className="text-amber-400">{arrayAddLabel[wordIndex]}</strong>
-                </h1>
+                <div className="flex text-2xl lg:text-6xl 2xl:text-9xl ">
+                    <h1 className={"text-white"}>{label +" "}</h1>
+                    <h1 className="text-amber-400 ms-2 md:ms-4">{arrayAddLabel[wordIndex]}</h1>
+                </div>
+                
                 <p className={"text-xl lg:text-2xl 2xl:text-3xl text-white  pt-3 lg:pt-12"}>{text}</p>
                 <Button type={"info"} callback={callback} className="lg:p-4 mt-3 lg:mt-16">{buttonLabel}</Button>
             </div>

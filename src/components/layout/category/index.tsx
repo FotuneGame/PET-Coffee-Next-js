@@ -8,18 +8,19 @@ interface IProps{
 }
 
 export default function Category({arrayCategory}:IProps){
+    const key_base="carousel category"+arrayCategory.length ? arrayCategory[0].name : "without array";
     const array = useDividedArray(arrayCategory,3);
 
     return(
         <div className={"pt-6"}>
         <h1 className={"w-full text-center text-3xl pt-6"}>Категории</h1>
-        <Carousel className={"pt-6"} indicator={false} key={"carousel category"+arrayCategory.length ? arrayCategory[0].name : "without array"}>
-                {array.map((block,index)=>{
+        <Carousel className={"pt-6"} indicator={false} key={key_base}>
+                {array.map((block,indexB)=>{
                     return(
-                        <div className="flex gap-3 px-1">
-                            {block.map((el,index)=>{
+                        <div className="flex gap-3 px-1" key={key_base+"block"+indexB}>
+                            {block.map((el,indexC)=>{
                                 return(
-                                    <CategoryCard className="basis-1/3" url={el.url} label={el.name} />
+                                    <CategoryCard className="basis-1/3" url={el.url} label={el.name} key={key_base+"block"+indexB+"card"+indexC}/>
                                 );
                             })  
                             }

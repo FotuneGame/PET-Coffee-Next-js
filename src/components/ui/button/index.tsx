@@ -1,6 +1,8 @@
+import type { ButtonType } from "@/types/button"
+
 interface IProps{
     className:string,
-    type: "danger" | "success" | "info",
+    type: ButtonType,
     children:React.ReactNode,
     callback:()=>void,
 }

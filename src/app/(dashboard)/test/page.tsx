@@ -9,6 +9,9 @@ import CategoryCard from "@/components/ui/card/category";
 import ItemCard from "@/components/ui/card/item";
 import MainItemCard from "@/components/ui/card/mainItem";
 import Button from "@/components/ui/button";
+import Input from "@/components/ui/input";
+import Modal from "@/components/ui/modal";
+import Dropdown from "@/components/ui/dropdown";
 
 
 export default function TestPage(){
@@ -56,6 +59,27 @@ export default function TestPage(){
                 <Button type="info" callback={()=>console.log("s")}>Hello</Button>
                 <Button callback={()=>console.log("s")}>Hello</Button>
             </>
+
+            <>
+                <Input type="text" callback={()=>console.log("s")} value={"s"} placeholder="lol" label="sas"/>
+                <Input type="textaria" callback={()=>console.log("s")} value={"s"} placeholder="lol" label="sas"/>
+                <Input type="number" callback={()=>console.log("s")} value={"s"} placeholder="lol" label="sas"/>
+                <Input type="date" callback={()=>console.log("s")} value={"s"} placeholder="lol" label="sas"/>
+                <Input type="checkbox" callback={()=>console.log("s")} value={true} placeholder="lol" label="sas"/>
+                <Input type="time" callback={()=>console.log("s")} value={true} placeholder="lol" label="sas"/>
+                <Input type="phone" callback={()=>console.log("s")} value={""} placeholder="+7 (953) 349-61-09" label="sas"/>
+                <Input type="file" callback={()=>console.log("s")} placeholder="lol" label="sas"/>
+                <Input type="password" callback={()=>console.log("s")} value={true} placeholder="lol" label="sas"/>
+            </>
+
+            <>
+                <Modal type="info" label="Modal">Hello</Modal>
+            </>
+
+            <>
+                <Dropdown key_hash="droptest" type="info" label="Dropdown" array={["Первый","Второй","3","4","5"]} callback={(value:string)=>console.log(value)}/>
+            </>
+
         </>
     )
 }
