@@ -6,7 +6,7 @@ import URL from "@/config/route";
 const NavDesktopContent = () =>{
     const pathname = usePathname();
     return(
-    <ul className="transition-color font-medium hidden md:flex items-center md:p-0 space-x-12">
+    <ul className="transition-color font-medium hidden md:flex items-center md:p-0 space-x-12 z-40">
         <li className="py-0 hover:text-sky-700">
             <Link href={URL.item} className={` ${pathname === URL.item ? 'font-bold' : ''}`}>
                 Ассортимент

@@ -11,7 +11,7 @@ import Instagram from "@/../public/icon/instagram.svg";
 export default function Footer(){
 
     return(
-        <footer className="bg-white flex flex-col-reverse md:flex-row bg-white md:bg-slate-100 w-full rounded-md">
+        <footer className="bg-white flex flex-col-reverse md:flex-row bg-white md:bg-slate-200 w-full rounded-md">
             <div className="items-center flex flex-col justify-center my-3">
                 <Link href={URL.main} className="flex items-center space-x-3 rtl:space-x-reserse">
                     <Logo alt="logo" width={30} height={30}/>
@@ -19,7 +19,7 @@ export default function Footer(){
                 </Link>
                 <p className="my-3">© 2024 Kofeushka.com</p>
             </div>
-            <div className="transition-color font-medium my-3 bg-slate-100 w-full rounded-md flex flex-col md:flex-row justify-end items-center md:space-x-12">
+            <div className="transition-color font-medium my-3 bg-slate-200 w-full rounded-md flex flex-col md:flex-row justify-end items-center md:space-x-12">
                 <div>
                     <ul className="justify-center  flex flex-col  md:justify-start  md:flex-row md:items-center md:space-x-12">
                         <li className="py-3 text-center md:text-start">

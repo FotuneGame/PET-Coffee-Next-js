@@ -1,29 +1,20 @@
 interface IProps{
+    className:string,
     type: "danger" | "success" | "info",
     children:React.ReactNode,
     callback:()=>void,
 }
 
-export default function Button({type,children,callback}:IProps){
+export default function Button({type,children,callback,className}:IProps){
     switch (type){
         case "danger":
-            return( <button className={"p-2 bg-slate-400 bg-red-400"} onClick={callback}>{children}</button>);
+            return( <button className={["p-2 bg-red-500 rounded-md text-white md:text-2xl active:scale-110 active:bg-red-700 hover:bg-red-400 transition-all", className].join(' ')} onClick={callback}>{children}</button>);
         case "success":
-            return( <button className={"p-2 bg-lime-400"} onClick={callback}>{children}</button>);
+            return( <button className={["p-2 bg-lime-500 rounded-md text-white md:text-2xl active:scale-110 active:bg-lime-700 hover:bg-lime-400 transition-all", className].join(' ')} onClick={callback}>{children}</button>);
         case "info":
-            return( <button className={"p-2 bg-amber-400"} onClick={callback}>{children}</button>);
+            return( <button className={["p-2 bg-amber-500 rounded-md text-white md:text-2xl active:scale-110 active:bg-amber-700 hover:bg-amber-400 transition-all", className].join(' ')} onClick={callback}>{children}</button>);
         default:
-            return( <button className={"p-2 bg-slate-400"} onClick={callback}>{children}</button>);
+            return( <button className={["p-2 bg-slate-500 rounded-md text-white md:text-2xl active:scale-110 active:bg-slate-700 hover:bg-slate-400 transition-all", className].join(' ')} onClick={callback}>{children}</button>);
     }
 
-}
-
-
-export async function getServerSideProps(context){
-    const res = await 1;
-    return {
-        props:{
-            callback: res,
-        }
-    }
 }
