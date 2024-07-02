@@ -9,7 +9,7 @@ import InputPhone from "./phone";
 import InputFile from "./file";
 import InputPassword from "./password";
 
-import type { InputType } from "@/types/input";
+import type { InputType } from "@/components/ui/types/input";
 
 
 interface IPrpos{

@@ -13,6 +13,9 @@ import Input from "@/components/ui/input";
 import Modal from "@/components/ui/modal";
 import Dropdown from "@/components/ui/dropdown";
 
+import Pagination from "@/components/ui/pagination";
+import MethodLoadTest from "@/components/ui/pagination/test";
+
 
 export default function TestPage(){
 
@@ -27,10 +30,46 @@ export default function TestPage(){
                 callback={()=>{}}
             />
 
+            <>
+                <Pagination
+                    methodLoad={MethodLoadTest}
+                    limit={4}
+                    key_hash={"some hash"}
+                />
+            </>
+
+
+
+            <>
+                <CategoryCard url={"/test"} label={"Категория"}/>
+                <ItemCard url={"/test"} item={
+                    {
+                        name: "Коки сорте 3",
+                        preview: "http://localhost:3000/img/1.jpg",
+                        price: 1200,
+                        oldPrice:300,
+                        category: "Американо",
+                        view: 131,
+                    }
+                } />
+                <MainItemCard url={"/test"} item={
+                    {
+                        name: "Коки сорте Дарк",
+                        preview: "http://localhost:3000/img/2.jpg",
+                        price: 200,
+                        oldPrice:300,
+                        category: "Латте",
+                        view: 23,
+                        description: "краткое описание",
+                        time: "20 мин",
+                        structure: "кокао зерна + молоко",
+                    }
+                }/>
+            </>
 
             <Category arrayCategory={[
                 {name:"Латте",url:"/"},
-                {name:"Американо",url:"/"},
+                {name:"Американо",url:"/test"},
                 {name:"Эсперсcо",url:"/"},
                 {name:"В пакетике",url:"/"},
             ]}/>

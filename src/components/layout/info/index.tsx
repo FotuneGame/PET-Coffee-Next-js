@@ -10,7 +10,7 @@ interface IProps{
 
 export default function Info({label,text,children}:IProps){
     return(
-        <div className="md:flex align-center  pt-6 ">
+        <div className="md:flex align-center gap-3  pt-6 ">
             <div className="flex text-center md:text-start basis-1/2 transition-all flex-col justify-center py-10">
                 <h1 className={"text-3xl"}>{label}
                 </h1>
