@@ -23,7 +23,7 @@ export default function InputCheckbox({placeholder,value,callback,label}:IProps)
                 type="checkbox"
                 onChange={wrapper} 
                 checked={valueNow} 
-                className="w-4 h-4 rounded-md active:scale-110 transition-all p-6 text-xl border-4 "
+                className="w-4 h-4 rounded-md active:scale-110 transition-all p-6 text-xl border "
             />
             <label  className="ms-2 text-xl font-medium">{label}</label>
             <p className="ms-2 text-sm">({placeholder})</p>
