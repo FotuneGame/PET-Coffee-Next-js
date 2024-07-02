@@ -54,7 +54,7 @@ const arrTest:Array<ElementCardType>=[
     }
 ]
 
-
+/*Пример фунции для работы с пагинацией*/
 export default function MethodLoadTest(page:number,limit:number) : MethodLoadResultType{
     const pageAll = 3; //
     return {
