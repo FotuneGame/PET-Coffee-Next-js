@@ -25,9 +25,9 @@ export default function Carousel ({indicator=true,controls=true,children,key_has
 
 
     return(
-        <div className={["w-full overflow-hidden",className].join(" ")}>
-            <div className={"relative transform transition-all"} style={{left:now*-100 + "%"}}>
-                <div className={"flex w-full overflow-hidden"} style={{width:100*children?.length+"%",maxHeight:"380px"}}>
+        <div className={["w-full overflow-hidden rounded-md",className].join(" ")}>
+            <div className={"relative transform transition-all "} style={{left:now*-100 + "%"}}>
+                <div className={"flex w-full overflow-hidden rounded-md"} style={{width:100*children?.length+"%",maxHeight:"380px"}}>
                     {children && children.map((el:any,index:number)=>{
                        return(
                         <div className={"w-full"} key={"content"+index+key_hash}>
@@ -37,7 +37,7 @@ export default function Carousel ({indicator=true,controls=true,children,key_has
                     })}
                 </div>
             </div>
-            <div className={["flex z-10 pt-2",controls ? "justify-between" : "justify-center"].join(" ")}>
+            <div className={["flex z-10 pt-2 ",controls ? "justify-between" : "justify-center"].join(" ")}>
                 {controls && <ArrowSVG width={"2rem"} height={"2rem"} className={"active:scale-110 transition-all"} onClick={before}/>}
                 {indicator &&
                     <div className={"grid grid-cols-2 md:grid-cols-3  gap-2"}>

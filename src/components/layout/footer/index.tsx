@@ -1,11 +1,11 @@
 import Link from "next/link";
 import URL from "@/config/route";
-import Logo from "@/../public/icon/coffee.svg";
+import Logo from "../../../../public/icon/coffee.svg";
 
-import VK from "@/../public/icon/vk.svg";
-import Whatsapp from "@/../public/icon/whatsapp.svg";
-import Telegram from "@/../public/icon/telegram.svg";
-import Instagram from "@/../public/icon/instagram.svg";
+import VK from "../../../../public/icon/vk.svg";
+import Whatsapp from "../../../../public/icon/whatsapp.svg";
+import Telegram from "../../../../public/icon/telegram.svg";
+import Instagram from "../../../../public/icon/instagram.svg";
 
 
 export default function Footer(){

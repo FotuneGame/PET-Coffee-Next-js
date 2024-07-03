@@ -2,6 +2,7 @@
 import {useState} from "react";
 import useTimer from "@/hooks/useTimer";
 import Button from "../button";
+import WrapperCreateAnimation from "@/components/animation/WrapperCreateAnimation";
 
 interface IProps{
     label:string,
@@ -25,7 +26,7 @@ export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,i
     const timer = useTimer(1000,nextWord);
 
     return(
-        <div className="w-full overflow-y-hidden">
+        <WrapperCreateAnimation className="w-full overflow-y-hidden">
             <div className={"bg-hero bg-no-repeat bg-cover bg-center bg-fixed brightness-50"}>
                 <img src={img} alt={img} className="w-full rounded-md" style={{maxHeight:"60vh",minHeight:"40vh"}}/>
             </div>
@@ -38,6 +39,6 @@ export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,i
                 <p className={"text-xl lg:text-2xl 2xl:text-3xl text-white  pt-3 lg:pt-12"}>{text}</p>
                 <Button type={"info"} callback={callback} className="lg:p-4 mt-3 lg:mt-12">{buttonLabel}</Button>
             </div>
-        </div>
+        </WrapperCreateAnimation>
     )
 }

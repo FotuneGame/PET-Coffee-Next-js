@@ -15,6 +15,9 @@ import Dropdown from "@/components/ui/dropdown";
 
 import Pagination from "@/components/ui/pagination";
 import MethodLoadTest from "@/components/ui/pagination/test";
+import Quote from "@/components/layout/quote";
+
+import ItemList from "@/components/layout/itemList";
 
 
 export default function TestPage(){
@@ -31,6 +34,10 @@ export default function TestPage(){
             />
 
             <>
+                <ItemList key_hash={"hash"} />
+            </>
+
+            <>
                 <Pagination
                     methodLoad={MethodLoadTest}
                     limit={4}
@@ -38,10 +45,13 @@ export default function TestPage(){
                 />
             </>
 
+            <>
+                <Quote label={"Hello world!"} text={"It is just funny text right here @_@"} />
+            </>
 
 
             <>
-                <CategoryCard url={"/test"} label={"Категория"}/>
+                <CategoryCard callback={(category)=>console.log(category)} label={"Категория"}/>
                 <ItemCard url={"/test"} item={
                     {
                         name: "Коки сорте 3",
@@ -67,12 +77,10 @@ export default function TestPage(){
                 }/>
             </>
 
-            <Category arrayCategory={[
-                {name:"Латте",url:"/"},
-                {name:"Американо",url:"/test"},
-                {name:"Эсперсcо",url:"/"},
-                {name:"В пакетике",url:"/"},
-            ]}/>
+            <Category
+                callback={(category)=>console.log(category)}
+                arrayCategory={["Все","Латте","Эспрессо","Капучино","Для бодрого утра"]}
+            />
 
             <Info
                 label="Почему наше кофе?"

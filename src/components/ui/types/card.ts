@@ -8,5 +8,5 @@ export type ElementCardType = {
 
 export type MethodLoadResultType = {
     arrayAdd:Array<ElementCardType>,
-    pageAll:number
+    pageAll:number,
 }

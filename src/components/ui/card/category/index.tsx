@@ -1,18 +1,16 @@
-'use client'
-import Link from "next/link";
-import { usePathname } from 'next/navigation';
+"use client"
 
 interface IProps{
     className:string,
-    url:string,
-    label:string
+    callback:(category:string)=>void,
+    label:string,
+    active:boolean,
 }
 
-export default function CategoryCard({url,label,className}:IProps){
-    const pathname = usePathname();
+export default function CategoryCard({callback,label,active,className}:IProps){
     return(
         <div className={["flex justify-center   rounded-md md:px-6 hover:scale-105 transition-transform h-30",className].join(' ')}>
-                <Link className={["md:text-xl",pathname!==url && "text-slate-400"].join(" ")}  href={url}>{label}</Link>
+                <p className={["md:text-xl ",!active && "text-slate-400"].join(" ")} onClick={()=>callback(label)}>{label}</p>
         </div>
     )
 }

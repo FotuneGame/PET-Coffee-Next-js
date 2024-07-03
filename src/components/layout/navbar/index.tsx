@@ -4,9 +4,9 @@ import URL from "@/config/route";
 import { useState } from 'react';
 import {NavDesktopContent,NavMobileContent} from "./content";
 
-import Logo from "@/../public/icon/coffee.svg";
+import Logo from "../../../../public/icon/coffee.svg";
 import Burger from "@/../../public/icon/burger.svg";
-import Close from "@/../public/icon/close.svg";
+import Close from "../../../../public/icon/close.svg";
 
 
 export default function Navbar(){
