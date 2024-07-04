@@ -1,7 +1,7 @@
 "use client"
 import WrapperScrollAnimation from "@/components/animation/WrapperScrollAnimation";
 import Link from "next/link";
-import {ItemMoreType} from "@/components/ui/types/item"
+import {ItemMoreType} from "@/types/item"
 import EyeSVG from "@/../public/icon/eye.svg";
 import TimeSVG from "@/../public/icon/time.svg";
 

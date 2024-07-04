@@ -1,4 +1,4 @@
-import {ItemMoreType, ItemType} from "@/components/ui/types/item";
+import {ItemMoreType, ItemType} from "@/types/item";
 
 export type ElementCardType = {
     url:string,

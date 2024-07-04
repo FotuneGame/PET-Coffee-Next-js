@@ -1,6 +1,6 @@
 "use client"
 import WrapperScrollAnimation from "@/components/animation/WrapperScrollAnimation";
-import {ItemType} from "@/components/ui/types/item";
+import {ItemType} from "@/types/item";
 import EyeSVG from "@/../public/icon/eye.svg";
 
 import { useRouter } from "next/navigation";

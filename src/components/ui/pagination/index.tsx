@@ -50,11 +50,11 @@ export default function Pagination({
                     array?.map((el,index)=>{
                         switch (el.type){
                             case "ItemType":
-                                return(<ItemCard className={"md:col-end-auto"} url={el.url} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
+                                return(<ItemCard className={"md:col-end-auto"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
                             case "ItemMoreType":
-                                return (<MainItemCard className={"lg:col-span-2"} url={el.url} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
+                                return (<MainItemCard className={"lg:col-span-2"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
                             default:
-                                return(<ItemCard className={"md:col-end-auto"} url={el.url} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
+                                return(<ItemCard className={"md:col-end-auto"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
                         }
                     })
                 }

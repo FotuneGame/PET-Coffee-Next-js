@@ -20,6 +20,7 @@ import Quote from "@/components/layout/quote";
 import ItemList from "@/components/layout/itemList";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import Popup from "@/components/ui/popup";
+import Video from "@/components/ui/video";
 
 
 export default function TestPage(){
@@ -72,8 +73,9 @@ export default function TestPage(){
 
             <>
                 <CategoryCard callback={(category)=>console.log(category)} label={"Категория"}/>
-                <ItemCard url={"/test"} item={
+                <ItemCard url={"/item/1"} item={
                     {
+                        id:1,
                         name: "Коки сорте 3",
                         preview: "http://localhost:3000/img/1.jpg",
                         price: 1200,
@@ -82,8 +84,9 @@ export default function TestPage(){
                         view: 131,
                     }
                 } />
-                <MainItemCard url={"/test"} item={
+                <MainItemCard url={"/item/2"} item={
                     {
+                        id:2,
                         name: "Коки сорте Дарк",
                         preview: "http://localhost:3000/img/2.jpg",
                         price: 200,
@@ -152,6 +155,7 @@ export default function TestPage(){
                 </Popup>
             </>
 
+            <Video src={"/video/404.webm"} />
 
             <div id={"yachor"}></div>
 

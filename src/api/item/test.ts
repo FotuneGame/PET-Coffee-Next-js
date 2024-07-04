@@ -2,8 +2,9 @@ import {ElementCardType,MethodLoadResultType} from "@/components/ui/types/card";
 
 export const arrTest:Array<ElementCardType>=[
     {
-        url:'/test',
+        url:'/item',
         data:{
+            id:1,
             name: "Коки сорте",
             preview: "http://localhost:3000/img/1.jpg",
             price: 1200,
@@ -14,8 +15,9 @@ export const arrTest:Array<ElementCardType>=[
         type:"ItemType"
     },
     {
-        url:'/test',
+        url:'/item',
         data:{
+            id:2,
             name: "Коки сорте 2",
             preview: "http://localhost:3000/img/1.jpg",
             price: 1200,
@@ -26,8 +28,9 @@ export const arrTest:Array<ElementCardType>=[
         type:"ItemType"
     },
     {
-        url:'/test',
+        url:'/item',
         data:{
+            id:1,
             name: "Коки сорте 3",
             preview: "http://localhost:3000/img/1.jpg",
             price: 1200,
@@ -38,8 +41,9 @@ export const arrTest:Array<ElementCardType>=[
         type:"ItemType"
     },
     {
-        url:'/test',
+        url:'/item',
         data: {
+            id:1,
             name: "Коки сорте Дарк",
             preview: "http://localhost:3000/img/2.jpg",
             price: 200,

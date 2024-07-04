@@ -4,6 +4,7 @@ const arrTest:Array<ElementCardType>=[
     {
         url:'/test',
         data:{
+            id:1,
             name: "Коки сорте",
             preview: "http://localhost:3000/img/1.jpg",
             price: 1200,
@@ -16,6 +17,7 @@ const arrTest:Array<ElementCardType>=[
     {
         url:'/test',
         data:{
+            id:2,
             name: "Коки сорте 2",
             preview: "http://localhost:3000/img/1.jpg",
             price: 1200,
@@ -28,6 +30,7 @@ const arrTest:Array<ElementCardType>=[
     {
         url:'/test',
         data:{
+            id:3,
             name: "Коки сорте 3",
             preview: "http://localhost:3000/img/1.jpg",
             price: 1200,
@@ -40,6 +43,7 @@ const arrTest:Array<ElementCardType>=[
     {
         url:'/test',
         data: {
+            id:4,
             name: "Коки сорте Дарк",
             preview: "http://localhost:3000/img/2.jpg",
             price: 200,

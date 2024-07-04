@@ -1,4 +1,5 @@
 export interface ItemType {
+    id:number,
     name:string,
     preview:string,
     price:string,
