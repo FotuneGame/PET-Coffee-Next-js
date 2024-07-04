@@ -7,10 +7,10 @@ import {getItemsAPI} from "@/api/item";
 
 interface IProps{
     key_hash:string,
+    limit:number,
 }
 
-export default function ItemList({key_hash}:IProps){
-    const limit = 12;
+export default function ItemList({key_hash,limit=4}:IProps){
     const [arrayCategory,setArrayCategory] = useState<Array<string>>([]);
     const [categoryNow,setCategoryNow] = useState<string>(null);
     const [clear,setClear] = useState<boolean>(false);

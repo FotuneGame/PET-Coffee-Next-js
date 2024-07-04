@@ -21,12 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={latoTTF.className}>
-        <Navbar />
-        <div className="content">
-          {children}
-        </div>
-        <Footer />
-        </body>
+          <Navbar />
+          <div className="content">
+            {children}
+          </div>
+          <Footer />
+      </body>
     </html>
   );
 }

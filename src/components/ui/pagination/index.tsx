@@ -59,7 +59,7 @@ export default function Pagination({
                     })
                 }
             </div>
-            <WrapperCreateAnimation className={"flex justify-center"}>
+            <WrapperCreateAnimation className={"flex justify-center my-6"}>
                 {lastPage ?
                     <Button callback={()=>setLastPage(true)}>Кажется всё...</Button>
                     :

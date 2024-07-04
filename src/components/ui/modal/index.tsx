@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Button from "@/components/ui/button";
 import type { ButtonType } from "@/components/ui/types/button";
+import CloseSVG from "@/../public/icon/close.svg";
 
 interface IProps{
     label:string,
@@ -20,14 +21,14 @@ export default function Modal({label,type,children}:IProps){
                     <div className="rounded-md  h-lvh md:m-60 p-2 bg-white" onClick={(e)=>e.stopPropagation()}>
                         <div className="w-full h-full">
                             <div className="flex justify-end w-full">
-                                <Button type="info" callback={()=>setShow(false)}>Закрыть</Button>
+                                <CloseSVG width={"2rem"} height={"2rem"} onClick={()=>setShow(false)} />
                             </div>
                             <div className="flex justify-center items-center">
                                 {children}
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             }
         </>
     )

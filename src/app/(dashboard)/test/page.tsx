@@ -18,6 +18,8 @@ import MethodLoadTest from "@/components/ui/pagination/test";
 import Quote from "@/components/layout/quote";
 
 import ItemList from "@/components/layout/itemList";
+import Breadcrumb from "@/components/ui/breadcrumb";
+import Popup from "@/components/ui/popup";
 
 
 export default function TestPage(){
@@ -31,7 +33,25 @@ export default function TestPage(){
                 img={"/img/4.jpg"}
                 buttonLabel="Перейти к главному"
                 callback={()=>{}}
+                href={"#yachor"}
             />
+
+            <>
+                <Breadcrumb path={[
+                    {
+                        name:"Main",
+                        url:"/"
+                    },
+                    {
+                        name:"Second",
+                        url:"/second"
+                    },
+                    {
+                        name:"Test",
+                        url:"/test"
+                    }
+                ]} />
+            </>
 
             <>
                 <ItemList key_hash={"hash"} />
@@ -122,10 +142,18 @@ export default function TestPage(){
             <>
                 <Modal type="info" label="Modal">Hello</Modal>
             </>
-
             <>
                 <Dropdown key_hash="droptest" type="info" label="Dropdown" array={["Первый","Второй","3","4","5"]} callback={(value:string)=>console.log(value)}/>
             </>
+
+            <>
+                <Popup>
+                    Some messege adasddasdasdasdadadasdadadadasdadasddsadada sakaffdk k k fk kd kdk fak faf ak fak kdakkak kf kf ak fak dk fk fk
+                </Popup>
+            </>
+
+
+            <div id={"yachor"}></div>
 
         </>
     )

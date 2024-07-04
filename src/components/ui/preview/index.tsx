@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import {useState} from "react";
 import useTimer from "@/hooks/useTimer";
 import Button from "../button";
@@ -11,9 +12,10 @@ interface IProps{
     callback:()=>void,
     buttonLabel:string
     img:string,
+    href:string,
 }
 
-export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,img}:IProps){
+export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,img,href=""}:IProps){
     const [wordIndex,SetWordIndex] = useState<number>(0);
     const nextWord = () =>{
         if(arrayAddLabel.length){
@@ -27,17 +29,27 @@ export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,i
 
     return(
         <WrapperCreateAnimation className="w-full overflow-y-hidden">
-            <div className={"bg-hero bg-no-repeat bg-cover bg-center bg-fixed brightness-50"}>
-                <img src={img} alt={img} className="w-full rounded-md" style={{maxHeight:"60vh",minHeight:"40vh"}}/>
-            </div>
-            <div className="absolute  flex-col justify-center z-10 left-12 sm:left-16 md:left-24 lg:left-32" style={{top:"25vh"}}>
-                <div className="flex text-xl sm:text-2xl lg:text-6xl 2xl:text-9xl ">
-                    <h1 className={"text-white"}>{label +" "}</h1>
-                    <h1 className="text-amber-400 ms-2 md:ms-4">{arrayAddLabel[wordIndex]}</h1>
+            <div
+                className={"bg-hero bg-no-repeat bg-cover bg-center bg-fixed  rounded-md"}
+                style={{
+                    backgroundImage:`url(${img})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    height:"60vh",
+                }}
+            >
+                <div className="bg-gradient-to-b from-transparent to-black rounded-md h-full flex flex-col justify-center  items-center md:items-start z-10 px-6 ">
+                    <div className="flex text-xl sm:text-2xl md:text-6xl 2xl:text-9xl text-center md:text-start md:mt-36">
+                        <h1 className={"text-white"}>{label +" "}</h1>
+                        <h1 className="text-amber-400 ms-2 md:ms-4">{arrayAddLabel[wordIndex]}</h1>
+                    </div>
+
+                    <p className={"my-6 text-xl lg:text-2xl 2xl:text-3xl text-white  text-center md:text-start"}>{text}</p>
+                    <Link href={href}>
+                        <Button type={"info"} callback={callback} className="text-center md:text-start md:mt-6">{buttonLabel}</Button>
+                    </Link>
                 </div>
-                
-                <p className={"text-xl lg:text-2xl 2xl:text-3xl text-white  pt-3 lg:pt-12"}>{text}</p>
-                <Button type={"info"} callback={callback} className="lg:p-4 mt-3 lg:mt-12">{buttonLabel}</Button>
             </div>
         </WrapperCreateAnimation>
     )

@@ -11,7 +11,7 @@ import Instagram from "../../../../public/icon/instagram.svg";
 export default function Footer(){
 
     return(
-        <footer className="bg-white flex flex-col-reverse md:flex-row bg-white md:bg-slate-200 w-full rounded-md">
+        <footer className="bg-white flex flex-col-reverse md:flex-row bg-white md:bg-slate-200 w-full rounded-md mt-12">
             <div className="items-center flex flex-col justify-center my-3">
                 <Link href={URL.main} className="flex items-center space-x-3 rtl:space-x-reserse">
                     <Logo alt="logo" width={30} height={30}/>
