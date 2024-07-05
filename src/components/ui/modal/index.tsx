@@ -24,7 +24,7 @@ export default function Modal({label,type,className,children}:IProps){
                             <div className="flex justify-end w-full">
                                 <CloseSVG width={"2rem"} height={"2rem"} onClick={()=>setShow(false)} />
                             </div>
-                            <div className="flex justify-center items-center">
+                            <div className="flex justify-center items-center h-4/5">
                                 {children}
                             </div>
                         </div>

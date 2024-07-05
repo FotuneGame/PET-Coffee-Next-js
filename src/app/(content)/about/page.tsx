@@ -1,4 +1,3 @@
-import Popup from "@/components/ui/popup";
 import Preview from "@/components/ui/preview";
 import Quote from "@/components/layout/quote";
 import Info from "@/components/layout/info";
@@ -66,10 +65,6 @@ export default function About(){
                     </iframe>
                 </div>
             </Info>
-
-            <Popup>
-                Мы можем использовать cookie для работы сайта...
-            </Popup>
         </>
     );
 }

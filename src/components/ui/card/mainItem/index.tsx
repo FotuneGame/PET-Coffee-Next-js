@@ -1,7 +1,7 @@
 "use client"
 import WrapperScrollAnimation from "@/components/animation/WrapperScrollAnimation";
 import Link from "next/link";
-import {ItemMoreType} from "@/types/item"
+import {IItem} from "@/types/item"
 import EyeSVG from "@/../public/icon/eye.svg";
 import TimeSVG from "@/../public/icon/time.svg";
 
@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 interface IProps{
     url:string,
-    item:ItemMoreType,
+    item:IItem,
     className:string,
 }
 

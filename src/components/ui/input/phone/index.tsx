@@ -14,7 +14,6 @@ export default function InputPhone({placeholder,value,callback,label}:IProps){
 
     const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
         setValueNow(event.target.value);
-        console.log(event.target.value)
         callback(event)
     }
 

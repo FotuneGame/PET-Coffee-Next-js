@@ -54,7 +54,7 @@ const arrTest:Array<ElementCardType>=[
             time: "20 мин",
             structure: "кокао зерна + молоко",
         },
-        type:"ItemMoreType"
+        type:"IItem"
     }
 ]
 

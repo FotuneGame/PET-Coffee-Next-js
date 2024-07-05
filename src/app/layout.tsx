@@ -4,6 +4,8 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import Popup from "@/components/ui/popup";
+import StoreProvider from "./StoreProvider";
 
 const latoTTF = Lato({ subsets: ['latin'], weight: ['400','700'] });
 
@@ -21,11 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={latoTTF.className}>
-          <Navbar />
-          <div className="content">
-            {children}
-          </div>
-          <Footer />
+        <StoreProvider>
+            <Navbar />
+            <div className="content">
+              {children}
+            </div>
+            <Popup>
+                Мы можем использовать cookie для работы сайта...
+            </Popup>
+            <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

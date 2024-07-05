@@ -6,13 +6,14 @@ import CloseSVG from "@/../public/icon/close.svg";
 
 interface IProps{
     children:React.ReactNode,
+    className:string,
 }
 
-export default function Popup({children}:IProps){
+export default function Popup({children,className=''}:IProps){
     const [exit,setExit] = useState<boolean>(false);
     if(!exit)
         return (
-            <div className={"fixed z-30  right-0 bottom-0 m-2 w-1/2"}>
+            <div className={["fixed z-30  right-0 bottom-0 m-2 w-1/2",className].join(" ")}>
                 <WrapperCreateAnimation className={"border w-1/2 bg-white rounded-md flex flex-row justify-between items-center p-2"}>
                     <div>
                         {children}

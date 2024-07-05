@@ -17,17 +17,19 @@ interface IPrpos{
     placeholder:string,
     value:string | number | boolean | undefined,
     label:string,
+    max:number,
+    min:number,
     callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
 }
 
-export default function Input({type,placeholder,value,callback,label}:IPrpos){
+export default function Input({type,placeholder,value,callback,label,max=100,min=0}:IPrpos){
     switch(type){
         case "text":
             return (<InputText placeholder={placeholder} value={value} callback={callback} label={label}/>);
         case "textaria":
             return (<InputTextAria placeholder={placeholder} value={value} callback={callback} label={label}/>);
         case "number":
-            return (<InputNumber placeholder={placeholder} value={value} callback={callback} label={label}/>);
+            return (<InputNumber placeholder={placeholder} value={value} callback={callback} label={label} max={max} min={min}/>);
         case "date":
             return (<InputDate placeholder={placeholder} value={value} callback={callback} label={label}/>);
         case "checkbox":

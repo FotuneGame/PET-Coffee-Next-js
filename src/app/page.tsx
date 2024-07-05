@@ -3,7 +3,8 @@ import Quote from "@/components/layout/quote";
 import ItemList from "@/components/layout/itemList";
 import Info from "@/components/layout/info";
 import Carousel from "@/components/ui/carousel";
-import Popup from "@/components/ui/popup";
+
+
 
 export default function Home() {
   return (
@@ -14,14 +15,14 @@ export default function Home() {
             arrayAddLabel={["день","вкус","стиль","вайб","прайс"]}
             buttonLabel={"Получить кофе"}
             img={"/img/2.jpg"}
-            href={"#about"}
+            href={"#coffee"}
         />
 
         <Quote
             label={"Хочешь попробовать новый кофе?"}
             text={"Наслаждайся новыми сортами и ароматами кофе рядом с домом"}
         />
-
+        <div id={"coffee"} />
         <ItemList key_hash={"main"} limit={12}/>
 
         <Quote
@@ -56,10 +57,6 @@ export default function Home() {
                 width="100%" height="400" frameBorder="0">
             </iframe>
         </div>
-
-        <Popup>
-            Мы можем использовать cookie для комфортной работы сайта...
-        </Popup>
     </>
   );
 }

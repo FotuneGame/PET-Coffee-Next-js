@@ -1,5 +1,6 @@
 "use client"
 import {useEffect, useState} from "react";
+import {MethodLoadResultType} from "@/components/ui/types/card";
 import Category from "@/components/layout/category";
 import Pagination from "@/components/ui/pagination";
 import {getAllCategoryAPI} from "@/api/category";
@@ -12,7 +13,7 @@ interface IProps{
 
 export default function ItemList({key_hash,limit=4}:IProps){
     const [arrayCategory,setArrayCategory] = useState<Array<string>>([]);
-    const [categoryNow,setCategoryNow] = useState<string>(null);
+    const [categoryNow,setCategoryNow] = useState<string>("");
     const [clear,setClear] = useState<boolean>(false);
 
     const ChangeCategory = (category:string) =>{
@@ -20,12 +21,17 @@ export default function ItemList({key_hash,limit=4}:IProps){
         setClear(true);
     }
 
-    const loadItems = (page:number,limit:number) =>{
-        return getItemsAPI(page,limit,categoryNow);
+    const loadItems = async (page:number,limit:number) : Promise<MethodLoadResultType | null> =>{
+        return await getItemsAPI(page,limit,categoryNow);
     }
 
     useEffect(()=>{
-        setArrayCategory(getAllCategoryAPI());
+        const asyncCall = async () => {
+            const res = await getAllCategoryAPI();
+            if(!res) return;
+            setArrayCategory(res);
+        }
+        asyncCall().catch(er=>console.error(er));
     },[]);
 
 

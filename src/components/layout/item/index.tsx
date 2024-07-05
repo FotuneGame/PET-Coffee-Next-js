@@ -1,5 +1,5 @@
-import WrapperScrollAnimation from "@/components/animation/WrapperScrollAnimation";
-import {ItemMoreType} from "@/types/item";
+import WrapperCreateAnimation from "@/components/animation/WrapperCreateAnimation";
+import {IItem} from "@/types/item";
 import Carousel from "@/components/ui/carousel";
 import TimeSVG from "../../../../public/icon/time.svg";
 import EyeSVG from "../../../../public/icon/eye.svg";
@@ -7,14 +7,14 @@ import Modal from "@/components/ui/modal";
 import FormAddOrder from "@/components/layout/form/order/add";
 
 interface IProps{
-    item:ItemMoreType,
-    callback:()=>void,
+    item:IItem,
+    arrayCoffeeshop:Array<string> | null,
 }
 
-export default function Item({item,callback}:IProps){
+export default function Item({item,arrayCoffeeshop}:IProps){
 
     return(
-        <WrapperScrollAnimation className="md:flex align-center gap-3  pt-6 ">
+        <WrapperCreateAnimation className="md:flex align-center gap-3  pt-6 ">
             <div className={"basis-1/2"}>
                 <Carousel key={"preview carousel"}>
                     {item.img?.map((img,index)=>{
@@ -43,9 +43,13 @@ export default function Item({item,callback}:IProps){
                         <p className={"md:text-xl pb-6"}>{item.category}</p>
                         <p className={"text-sm md:text-base"}>{item.description}</p>
                         <p className={"text-sm md:text-base"}>Состав: {item.structure}</p>
-                        <Modal className={"mt-6"} type={"success"} label={"Сделать заказ"}>
-                            <FormAddOrder item={item}/>
-                        </Modal>
+                        {arrayCoffeeshop ? 
+                            <Modal className={"mt-6"} type={"success"} label={"Сделать заказ"}>
+                                <FormAddOrder item={item} arrayCoffeeshop={arrayCoffeeshop}/>
+                            </Modal>
+                        :
+                            <p className="text-xl text-red">Товара нет в наличии(</p>
+                        }
                     </div>
                     <div className={"basis-1/4 flex flex-col justify-end mb-12"}>
                         <strong className={"text-xl md:text-2xl"}>{item.price} ₽</strong>
@@ -53,6 +57,6 @@ export default function Item({item,callback}:IProps){
                     </div>
                 </div>
             </div>
-        </WrapperScrollAnimation>
+        </WrapperCreateAnimation>
     )
 }

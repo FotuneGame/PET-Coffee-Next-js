@@ -10,7 +10,7 @@ interface IProps{
     className:string,
 }
 
-export default function Carousel ({indicator=true,controls=true,children,key_hash,className}:IProps){
+export default function Carousel ({indicator=true,controls=true,children,key_hash,className=""}:IProps){
     const [now,setNow] = useState(0);
 
     const next = ()=>{

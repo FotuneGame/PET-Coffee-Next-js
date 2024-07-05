@@ -5,15 +5,23 @@ interface IProps{
     placeholder:string,
     value:number | undefined,
     label:string,
+    max:number,
+    min:number,
     callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
 }
 
-export default function InputNumber({placeholder,value,callback,label}:IProps){
-
+export default function InputNumber({placeholder,value,callback,label,max,min}:IProps){
     const [valueNow,setValueNow] = useState<number|undefined>(value);
 
     const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
-        setValueNow(event.target.value);
+        if(event.target.value!==""){
+            if(event.target.value>max)
+                setValueNow(max);
+            else if (event.target.value<min)
+                setValueNow(min);
+            else
+                setValueNow(event.target.value);
+        }else setValueNow(event.target.value);
         callback(event)
     }
 
@@ -21,6 +29,8 @@ export default function InputNumber({placeholder,value,callback,label}:IProps){
         <div className="flex flex-col p-2 w-full">
             <label  className="m-2 text-xl font-medium">{label}</label>
             <input 
+                min={min}
+                max={max}
                 type="number"
                 onChange={wrapper} 
                 placeholder={placeholder} 

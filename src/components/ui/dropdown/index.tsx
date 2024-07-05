@@ -18,13 +18,14 @@ export default function Dropdown({label,callback,array,key_hash}:IProps){
     useEffect(()=>{
         if(value!==label)
             callback(value);
+        setShow(false)
     },[value]);
     return(
-        <>
+        <div>
             <Button type='info' className="flex gap-1 items-center " callback={()=>setShow(!show)}>{value}<DropdownSVG className={show ? "transition-all transform rotate-0 active:scale-110" : "transition-all transform rotate-180 active:scale-110"} width={"1rem"} height={"1rem"}/></Button>
             {show && array &&
-                <div className="z-10  bg-amber-500  divide-y divide-amber-100 rounded-lg shadow w-44 mt-2">
-                    <ul className="py-2 text-xl overflow-y-scroll" style={{maxHeight:"10rem"}}>
+                <div className="absolute z-10  bg-amber-500  divide-y divide-amber-100 rounded-lg shadow w-44 mt-2">
+                    <ul className="py-2 overflow-y-scroll" style={{maxHeight:"8rem"}}>
                         {array.map((el:string,index:number)=>{
                                 return(
                                     <li key={"dropdown "+key_hash+index+el}>
@@ -36,6 +37,6 @@ export default function Dropdown({label,callback,array,key_hash}:IProps){
                     </ul>
                 </div>
             }
-        </>
+        </div>
     );
 }

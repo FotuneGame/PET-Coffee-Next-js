@@ -6,7 +6,7 @@ import {useEffect,useState} from "react";
 import Button from "@/components/ui/button";
 
 interface IProps{
-    methodLoad:(page:number,limit:number) => MethodLoadResultType,
+    methodLoad:(page:number,limit:number) => Promise<MethodLoadResultType | null>,
     limit:number,
     key_hash:string,
     className:string,
@@ -34,12 +34,16 @@ export default function Pagination({
             if(setClear)
                 setClear(false);
         }else {
-            const res = methodLoad(page, limit);
-            if (res.pageAll >= page) {
-                if (!clear)
-                    setArray([...array, ...(res.arrayAdd)]);
-                setLastPage(false);
-            } else setLastPage(true);
+            const asyncCall = async () =>{
+                const res = await methodLoad(page, limit);
+                if(!res) return;
+                if (res.pageAll >= page) {
+                    if (!clear)
+                        setArray([...array, ...(res.arrayAdd)]);
+                    setLastPage(false);
+                } else setLastPage(true);
+            }
+            asyncCall().catch(er => console.error(er));
         }
     },[page,lastPage,clear]);
 
@@ -51,7 +55,7 @@ export default function Pagination({
                         switch (el.type){
                             case "ItemType":
                                 return(<ItemCard className={"md:col-end-auto"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
-                            case "ItemMoreType":
+                            case "IItem":
                                 return (<MainItemCard className={"lg:col-span-2"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
                             default:
                                 return(<ItemCard className={"md:col-end-auto"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
