@@ -34,7 +34,7 @@ export default function Home() {
             label={"Наши партнёры-кофейни лучшие"}
             text={"Мы считаем, что хорошый выбор кофейнь рядом с домом, работой, учебой важен для каждого человека. Нет ничего приятный в подходящей момент выпить чашечку эсперссо или же мендального латте."}
         >
-            <Carousel key={"preview carousel"}>
+            <Carousel key_hash={"preview carousel"}>
                 <div>
                     <img src="/img/1.jpg" alt="image1" className="w-full"/>
                 </div>

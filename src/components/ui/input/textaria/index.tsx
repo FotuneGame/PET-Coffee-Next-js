@@ -1,18 +1,19 @@
 "use client"
+import { ChangeEvent } from "react";
 import { useState } from "react"
 
 interface IProps{
-    placeholder:string,
+    placeholder?:string,
     value:string | undefined,
-    label:string,
-    callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+    label?:string,
+    callback:(event: ChangeEvent<HTMLTextAreaElement>) => void,
 }
 
 export default function InputTextAria({placeholder,value,callback,label}:IProps){
 
     const [valueNow,setValueNow] = useState<string|undefined>(value);
 
-    const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
+    const wrapper = (event: ChangeEvent<HTMLTextAreaElement>) =>{
         setValueNow(event.target.value);
         callback(event)
     }

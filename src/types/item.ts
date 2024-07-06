@@ -1,4 +1,4 @@
-export type ItemType {
+export type ItemType = {
     id:number,
     name:string,
     preview:string,

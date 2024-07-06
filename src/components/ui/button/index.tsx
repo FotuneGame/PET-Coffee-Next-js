@@ -1,7 +1,7 @@
 import type { ButtonType } from "@/components/ui/types/button"
 
 interface IProps{
-    className:string,
+    className?:string,
     type: ButtonType,
     children:React.ReactNode,
     callback:()=>void,

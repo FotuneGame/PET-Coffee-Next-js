@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 
 interface IProps{
     children:React.ReactNode,
-    className:string,
+    className?:string,
 }
 
 export default function WrapperCreateAnimation({children,className}:IProps){

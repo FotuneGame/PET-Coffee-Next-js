@@ -6,7 +6,7 @@ import CloseSVG from "@/../public/icon/close.svg";
 
 interface IProps{
     children:React.ReactNode,
-    className:string,
+    className?:string,
 }
 
 export default function Popup({children,className=''}:IProps){

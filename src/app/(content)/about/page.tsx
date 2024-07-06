@@ -36,7 +36,7 @@ export default function About(){
                 text={"Небольшая галерея прекрасных рабочих дней для вас"}
             />
 
-            <Carousel className={"mt-6"} controls={false} key={"preview carousel"}>
+            <Carousel className={"mt-6"} controls={false} key_hash={"preview carousel"}>
                 <div>
                     <img src="/img/1.jpg" alt="image1" className="w-full"/>
                 </div>

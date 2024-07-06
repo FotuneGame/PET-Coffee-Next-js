@@ -5,7 +5,7 @@ import style from "./loader.module.css";
 import CoffeeSVG from "@/../public/icon/coffee.svg"
 
 interface IProps{
-    loading:boolean,
+    loading?:boolean,
 }
 
 export default function Loader({loading=false}:IProps){

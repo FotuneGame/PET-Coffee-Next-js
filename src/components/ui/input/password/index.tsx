@@ -1,19 +1,20 @@
 "use client"
+import { ChangeEvent } from "react";
 import { useState } from "react"
 
 interface IProps{
-    placeholder:string,
-    value:number | undefined,
-    label:string,
-    callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+    placeholder?:string,
+    value:string | undefined,
+    label?:string,
+    callback:(event: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default function InputPassword({placeholder,value,callback,label}:IProps){
 
     const [show,setShow] = useState<boolean|undefined>(false);
-    const [valueNow,setValueNow] = useState<number|undefined>(value);
+    const [valueNow,setValueNow] = useState<string|undefined>(value);
 
-    const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
+    const wrapper = (event: ChangeEvent<HTMLInputElement>) =>{
         setValueNow(event.target.value);
         callback(event)
     }

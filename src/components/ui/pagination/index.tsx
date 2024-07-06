@@ -4,14 +4,15 @@ import ItemCard from "@/components/ui/card/item";
 import MainItemCard from "@/components/ui/card/mainItem";
 import {useEffect,useState} from "react";
 import Button from "@/components/ui/button";
+import {IItem} from "@/types/item";
 
 interface IProps{
     methodLoad:(page:number,limit:number) => Promise<MethodLoadResultType | null>,
     limit:number,
     key_hash:string,
-    className:string,
-    clear:boolean,
-    setClear:(value:boolean)=>void | null,
+    className?:string,
+    clear?:boolean,
+    setClear?:((value:boolean)=>void) | null,
 }
 
 export default function Pagination({
@@ -56,7 +57,7 @@ export default function Pagination({
                             case "ItemType":
                                 return(<ItemCard className={"md:col-end-auto"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
                             case "IItem":
-                                return (<MainItemCard className={"lg:col-span-2"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
+                                return (<MainItemCard className={"lg:col-span-2"} url={el.url+"/"+el.data.id} item={el.data as IItem} key={"pagination"+el.url+key_hash+index}/>);
                             default:
                                 return(<ItemCard className={"md:col-end-auto"} url={el.url+"/"+el.data.id} item={el.data} key={"pagination"+el.url+key_hash+index}/>);
                         }
@@ -65,7 +66,7 @@ export default function Pagination({
             </div>
             <WrapperCreateAnimation className={"flex justify-center my-6"}>
                 {lastPage ?
-                    <Button callback={()=>setLastPage(true)}>Кажется всё...</Button>
+                    <Button type={null} callback={()=>setLastPage(true)}>Кажется всё...</Button>
                     :
                     <Button type={"info"} callback={()=>setPage(page+1)}>Показать ещё</Button>
                 }

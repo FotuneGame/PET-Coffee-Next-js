@@ -27,7 +27,7 @@ export default function Category({arrayCategory,callback}:IProps){
     return(
     <WrapperScrollAnimation className={"pt-6"}>
         <h1 className={"w-full text-center text-3xl pt-6"}>Категории</h1>
-        <Carousel className={"pt-6"} indicator={false} key={key_base}>
+        <Carousel className={"pt-6"} indicator={false} key_hash={key_base}>
                 {array.map((block,indexB)=>{
                     return(
                         <div className="flex gap-3 px-1" key={key_base+"block"+indexB}>

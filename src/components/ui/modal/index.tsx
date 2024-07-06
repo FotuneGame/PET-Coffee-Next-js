@@ -7,7 +7,7 @@ import CloseSVG from "@/../public/icon/close.svg";
 interface IProps{
     label:string,
     type: ButtonType,
-    className:string,
+    className?:string,
     children: React.ReactNode,
 }
 

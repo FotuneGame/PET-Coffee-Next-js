@@ -1,18 +1,19 @@
 "use client"
+import { ChangeEvent } from "react";
 import { useState } from "react"
 
 interface IProps{
-    placeholder:string,
+    placeholder?:string,
     value:string | undefined,
-    label:string,
-    callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+    label?:string,
+    callback:(event: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default function InputFile({placeholder,value,callback,label}:IProps){
 
     const [valueNow,setValueNow] = useState<any>(value);
 
-    const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
+    const wrapper = (event: ChangeEvent<HTMLInputElement>) =>{
         setValueNow(event.target.files);
         console.log(event.target.files)
         callback(event)

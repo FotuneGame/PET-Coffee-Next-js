@@ -1,7 +1,7 @@
 "use client"
 
 interface IProps{
-    className:string,
+    className?:string,
     callback:(category:string)=>void,
     label:string,
     active:boolean,

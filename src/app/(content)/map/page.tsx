@@ -6,6 +6,7 @@ export default function Map(){
     return(
         <>
             <Quote
+                text={""}
                 label={"Наши партнёры"}
             />
             <div className={"rounded-md overflow-hidden my-6"}>

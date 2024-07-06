@@ -1,5 +1,4 @@
 "use client"
-import { ButtonType } from "@/components/ui/types/button";
 import Button from "../button";
 import DropdownSVG from '@/../public/icon/dropdown.svg'
 import { useState,useEffect } from "react";

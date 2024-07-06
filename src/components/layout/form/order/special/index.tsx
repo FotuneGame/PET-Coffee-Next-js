@@ -41,7 +41,7 @@ export default function FormSpecialOrder({arrayCoffeeshop}:IProps){
     return(
         <div className="flex flex-col justify-center gap-1 w-full px-6 border-2 p-6 rounded-md">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center py-6">
-                <Input type={"number"} value={specialInfo.count} label={"Штук:"} callback={(e)=>dispatch(actions.setCount(e.target.value))} placeholder="1" max={100} min={1}/>
+                <Input type={"number"} value={specialInfo.count} label={"Штук:"} callback={(e)=>dispatch(actions.setCount(Number(e.target.value)))} placeholder="1" max={100} min={1}/>
                 <Input type={"time"} value={specialInfo.time} label={"Время:"} callback={(e)=>dispatch(actions.setTime(e.target.value))}/>
                 <Input type={"date"} value={specialInfo.date} label={"Дата:"} callback={(e)=>dispatch(actions.setDate(e.target.value))}/>
                 <Input type={"phone"} value={specialInfo.feedback} label={"Номер телефона:"} callback={(e)=>dispatch(actions.setFeedback(e.target.value))} placeholder="+7 (953) 349-61-09"/>

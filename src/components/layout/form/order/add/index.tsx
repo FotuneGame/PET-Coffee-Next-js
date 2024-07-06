@@ -47,8 +47,8 @@ export default function FormAddOrder({item,arrayCoffeeshop}:IProps){
       <div className="flex flex-col justify-center gap-1 w-full px-6">
         <h1 className="text-xl">Форма заказа кофе: <strong>{item.name}</strong> ({item.category})</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 items-center py-6">
-            <Input type={"number"} value={itemInfo.count} label={"Штук:"} callback={(e)=>dispatch(actions.setCount(e.target.value))} placeholder="1" max={100} min={1}/>
-            <Input type={"number"} value={itemInfo.sugar} label={"Ложек сахара:"} callback={(e)=>dispatch(actions.setSugar(e.target.value))} placeholder="0" max={30} min={0}/>
+            <Input type={"number"} value={itemInfo.count} label={"Штук:"} callback={(e)=>dispatch(actions.setCount(Number(e.target.value)))} placeholder="1" max={100} min={1}/>
+            <Input type={"number"} value={itemInfo.sugar} label={"Ложек сахара:"} callback={(e)=>dispatch(actions.setSugar(Number(e.target.value)))} placeholder="0" max={30} min={0}/>
             <Input type={"time"} value={itemInfo.time} label={"Время:"} callback={(e)=>dispatch(actions.setTime(e.target.value))}/>
             <Input type={"date"} value={itemInfo.date} label={"Дата (необязательно):"} callback={(e)=>dispatch(actions.setDate(e.target.value))}/>
             <Input type={"phone"} value={itemInfo.feedback} label={"Номер телефона:"} callback={(e)=>dispatch(actions.setFeedback(e.target.value))} placeholder="+7 (953) 349-61-09"/>

@@ -1,18 +1,19 @@
 "use client"
+import { ChangeEvent } from "react";
 import { useState } from "react"
 
 interface IProps{
-    placeholder:string,
+    placeholder?:string,
     value:boolean | undefined,
-    label:string,
-    callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+    label?:string,
+    callback:(event: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default function InputCheckbox({placeholder,value,callback,label}:IProps){
 
     const [valueNow,setValueNow] = useState<boolean|undefined>(value);
 
-    const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
+    const wrapper = (event: ChangeEvent<HTMLInputElement>) =>{
         setValueNow(event.target.checked);
         callback(event)
     }

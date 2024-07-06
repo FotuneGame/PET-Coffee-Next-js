@@ -9,10 +9,10 @@ interface IProps{
     label:string,
     text:string,
     arrayAddLabel:Array<string>
-    callback:()=>void,
+    callback?:()=>void,
     buttonLabel:string
     img:string,
-    href:string,
+    href?:string,
 }
 
 export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,img,href=""}:IProps){
@@ -47,7 +47,7 @@ export default function Preview({label,text,arrayAddLabel,callback,buttonLabel,i
 
                     <p className={"my-6 text-xl lg:text-2xl 2xl:text-3xl text-white  text-center md:text-start"}>{text}</p>
                     <Link href={href}>
-                        <Button type={"info"} callback={callback} className="text-center md:text-start md:mt-6">{buttonLabel}</Button>
+                        <Button type={"info"} callback={()=>{callback && callback()}} className="text-center md:text-start md:mt-6">{buttonLabel}</Button>
                     </Link>
                 </div>
             </div>

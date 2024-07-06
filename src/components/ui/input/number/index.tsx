@@ -1,27 +1,28 @@
 "use client"
+import { ChangeEvent } from "react";
 import { useState } from "react"
 
 interface IProps{
-    placeholder:string,
+    placeholder?:string,
     value:number | undefined,
-    label:string,
-    max:number,
-    min:number,
-    callback:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+    label?:string,
+    max?:number,
+    min?:number,
+    callback:(event: ChangeEvent<HTMLInputElement>) => void,
 }
 
-export default function InputNumber({placeholder,value,callback,label,max,min}:IProps){
+export default function InputNumber({placeholder,value,callback,label,max=100,min=0}:IProps){
     const [valueNow,setValueNow] = useState<number|undefined>(value);
 
-    const wrapper = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
+    const wrapper = (event: ChangeEvent<HTMLInputElement>) =>{
         if(event.target.value!==""){
-            if(event.target.value>max)
+            if(Number(event.target.value)>max)
                 setValueNow(max);
-            else if (event.target.value<min)
+            else if (Number(event.target.value)<min)
                 setValueNow(min);
             else
-                setValueNow(event.target.value);
-        }else setValueNow(event.target.value);
+                setValueNow(Number(event.target.value));
+        }else setValueNow(Number(event.target.value));
         callback(event)
     }
 

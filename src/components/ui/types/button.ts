@@ -1,1 +1,1 @@
-export type ButtonType = "danger" | "success" | "info";
+export type ButtonType = "danger" | "success" | "info" | null;

@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 interface IProps{
     url:string,
     item:IItem,
-    className:string,
+    className?:string,
 }
 
 export default function MainItemCard({item,url,className}:IProps){

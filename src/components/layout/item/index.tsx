@@ -16,7 +16,7 @@ export default function Item({item,arrayCoffeeshop}:IProps){
     return(
         <WrapperCreateAnimation className="md:flex align-center gap-3  pt-6 ">
             <div className={"basis-1/2"}>
-                <Carousel key={"preview carousel"}>
+                <Carousel key_hash={"preview carousel"}>
                     {item.img?.map((img,index)=>{
                         return(
                             <div key={"Item img "+index}>
